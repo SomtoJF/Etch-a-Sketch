@@ -7,6 +7,8 @@ let slidervalue = document.getElementById('slidervalue');
 slidervalue.textContent = slider.getAttribute('value');
 let gridToggle = document.getElementById('gridtoggle');
 let eraser = document.getElementById('eraser');
+let rainbow = document.getElementById('rainbow');
+let defaultPen = document.getElementById('default')
 
 slider.oninput = function (){
     slidervalue.textContent = this.value;
@@ -29,8 +31,19 @@ gridToggle.addEventListener('click', function (){
 eraser.addEventListener('click',function erase(){
     let divs = container.getElementsByTagName('div');
     for(let i = 0; i < divs.length;i++){
-        divs[i].removeEventListener('mouseover', function () {this.style.backgroundColor = 'black'});
         divs[i].addEventListener('mouseover',function (){this.style.backgroundColor = 'white'});
+    };
+});
+rainbow.addEventListener('click', function (){
+    let divs = container.getElementsByTagName('div');
+    for(let i = 0; i < divs.length;i++){
+        divs[i].addEventListener('mouseover',function (){this.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`});
+    };
+});
+defaultPen.addEventListener('click',function erase(){
+    let divs = container.getElementsByTagName('div');
+    for(let i = 0; i < divs.length;i++){
+        divs[i].addEventListener('mouseover',function (){this.style.backgroundColor = 'black'});
     };
 });
 
