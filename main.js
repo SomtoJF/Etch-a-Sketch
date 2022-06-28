@@ -19,6 +19,7 @@ slider.oninput = function (){
     };
     createGrid(this.value);
 };
+
 gridToggle.addEventListener('click', function (){
     divs = container.getElementsByTagName('div');
     for(let i = 0; i < divs.length;i++){
@@ -29,18 +30,21 @@ gridToggle.addEventListener('click', function (){
         };
     };
 });
+
 eraser.addEventListener('click',function erase(){
     let divs = container.getElementsByTagName('div');
     for(let i = 0; i < divs.length;i++){
         divs[i].addEventListener('mouseover',function (){this.style.backgroundColor = 'white'});
     };
 });
+
 rainbow.addEventListener('click', function (){
     let divs = container.getElementsByTagName('div');
     for(let i = 0; i < divs.length;i++){
         divs[i].addEventListener('mouseover',function (){this.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`});
     };
 });
+
 defaultPen.addEventListener('click',function erase(){
     let divs = container.getElementsByTagName('div');
     for(let i = 0; i < divs.length;i++){
