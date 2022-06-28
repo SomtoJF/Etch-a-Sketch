@@ -5,6 +5,7 @@ let border = 'solid black 0.01px';
 let slider = document.getElementById('slider');
 let slidervalue = document.getElementById('slidervalue');
 slidervalue.textContent = slider.getAttribute('value');
+let gridToggle = document.getElementById('gridtoggle');
 
 slider.oninput = function (){
     slidervalue.textContent = this.value;
@@ -14,6 +15,16 @@ slider.oninput = function (){
     };
     createGrid(this.value);
 };
+gridToggle.addEventListener('click', function (){
+    divs = container.getElementsByTagName('div');
+    for(let i = 0; i < divs.length;i++){
+        if(divs[i].style.border == 'none'){
+            divs[i].style.border = 'solid black 0.01px';
+        }else{
+            divs[i].style.border = 'none';
+        };
+    };
+});
 
 /*
 function hover(newColor = 'black'){

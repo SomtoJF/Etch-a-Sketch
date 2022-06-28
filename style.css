@@ -59,3 +59,21 @@ body{
     font-weight: 500;
     border-radius: 5px;
 }
+#toolbar{
+    display: flex;
+    flex-direction: column;
+    height: 15%;
+    gap: 10%;
+}
+.tools{
+    box-sizing: border-box;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#gridtoggle{
+    background-color: white;
+    height: 100%;
+    width: 110px;
+}
