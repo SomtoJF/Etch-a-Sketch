@@ -71,9 +71,44 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 }
 #gridtoggle{
     background-color: white;
     height: 100%;
     width: 110px;
+}
+.tools button{
+    border-radius: 10px;
+    border: none;
+    height: 80%;
+    box-shadow: 0px 0px 5px;
+    font-family: fantasy;
+}
+.tools #rainbow {
+    color: white;
+    animation: colorchg2 7s ease-in 0s infinite alternate ;
+}
+@keyframes colorchg2 {
+    0%{
+        background-color: #9400D3;
+    }
+    14%{
+        background-color: #4B0082;
+    }
+    28%{
+        background-color: #0000FF;
+    }
+    42%{
+        background-color: #00FF00;
+    }
+    56%{
+        background-color: #FFFF00;
+    }
+    70%{
+        background-color: #FF7F00;
+    }
+    84%{
+        background-color: #FF0000;
+    }
 }
