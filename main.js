@@ -8,7 +8,8 @@ slidervalue.textContent = slider.getAttribute('value');
 let gridToggle = document.getElementById('gridtoggle');
 let eraser = document.getElementById('eraser');
 let rainbow = document.getElementById('rainbow');
-let defaultPen = document.getElementById('default')
+let defaultPen = document.getElementById('default');
+let clear = document.getElementById('clear');
 
 slider.oninput = function (){
     slidervalue.textContent = this.value;
@@ -47,12 +48,15 @@ defaultPen.addEventListener('click',function erase(){
     };
 });
 
-/*
-function hover(newColor = 'black'){
-    newColor = newColor.toLowerCase();
-    this.style.backgroundColor = newColor;
-}
-*/
+clear.addEventListener('click',function (){
+    let divs = container.getElementsByTagName('div');
+    for(let i = 0; i < divs.length;i++){
+        divs[i].style.backgroundColor = 'white';
+    };
+    
+});
+
+
 function createGrid(gridNumber){
     for(let i = 0; i < (gridNumber**2); i++){
         let div = document.createElement('div');
