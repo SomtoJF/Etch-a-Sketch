@@ -6,6 +6,7 @@ let slider = document.getElementById('slider');
 let slidervalue = document.getElementById('slidervalue');
 slidervalue.textContent = slider.getAttribute('value');
 let gridToggle = document.getElementById('gridtoggle');
+let eraser = document.getElementById('eraser');
 
 slider.oninput = function (){
     slidervalue.textContent = this.value;
@@ -25,6 +26,13 @@ gridToggle.addEventListener('click', function (){
         };
     };
 });
+eraser.addEventListener('click',function erase(){
+    let divs = container.getElementsByTagName('div');
+    for(let i = 0; i < divs.length;i++){
+        divs[i].removeEventListener('mouseover', function () {this.style.backgroundColor = 'black'});
+        divs[i].addEventListener('mouseover',function (){this.style.backgroundColor = 'white'});
+    };
+});
 
 /*
 function hover(newColor = 'black'){
@@ -41,9 +49,9 @@ function createGrid(gridNumber){
         container.style.gridTemplateRows = `repeat(${gridNumber}, 1fr)`;
         container.appendChild(div);
     };
-    let gridItems = container.getElementsByTagName('div');
-    for(let i = 0; i < gridItems.length;i++){
-        gridItems[i].addEventListener('mouseover', function () {this.style.backgroundColor = 'black'});
+    let divs = container.getElementsByTagName('div');
+    for(let i = 0; i < divs.length;i++){
+        divs[i].addEventListener('mouseover', function () {this.style.backgroundColor = 'black'});
     };
 }
 
