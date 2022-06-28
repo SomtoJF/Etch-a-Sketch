@@ -15,6 +15,10 @@ body{
     animation: colorchg 10s ease-in 0s infinite alternate;
     color: #FFFAFA;
 }
+#title small{
+    font-size: 11px;
+    color: black;
+}
 @keyframes colorchg{
     20%{
         color: #FF00FF;
