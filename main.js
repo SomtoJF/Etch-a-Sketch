@@ -2,6 +2,19 @@ let container = document.getElementById('container');
 let gridNumber = 16;
 let color = 'white';
 let border = 'solid black 0.01px';
+let slider = document.getElementById('slider');
+let slidervalue = document.getElementById('slidervalue');
+slidervalue.textContent = slider.getAttribute('value');
+
+slider.oninput = function (){
+    slidervalue.textContent = this.value;
+//remove all divs in container creates a blanks slate for a new grid to be created
+    while(container.firstChild){
+        container.removeChild(container.firstChild);
+    };
+    createGrid(this.value);
+};
+
 /*
 function hover(newColor = 'black'){
     newColor = newColor.toLowerCase();
@@ -21,10 +34,6 @@ function createGrid(gridNumber){
     for(let i = 0; i < gridItems.length;i++){
         gridItems[i].addEventListener('mouseover', function () {this.style.backgroundColor = 'black'});
     };
-    /*
-    gridItems.forEach(gridItem => {
-        gridItem.addEventListener('mouseover', hover())
-    });
-    */
 }
+
 createGrid(gridNumber);
