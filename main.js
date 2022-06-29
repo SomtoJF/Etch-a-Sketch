@@ -10,6 +10,7 @@ let eraser = document.getElementById('eraser');
 let rainbow = document.getElementById('rainbow');
 let defaultPen = document.getElementById('default');
 let clear = document.getElementById('clear');
+let colorPicker = document.getElementById('colorpicker');
 
 slider.oninput = function (){
     slidervalue.textContent = this.value;
@@ -45,7 +46,7 @@ rainbow.addEventListener('click', function (){
     };
 });
 
-defaultPen.addEventListener('click',function erase(){
+defaultPen.addEventListener('click',function (){
     let divs = container.getElementsByTagName('div');
     for(let i = 0; i < divs.length;i++){
         divs[i].addEventListener('mouseover',function (){this.style.backgroundColor = 'black'});
@@ -58,6 +59,14 @@ clear.addEventListener('click',function (){
         divs[i].style.backgroundColor = 'white';
     };
     
+});
+
+colorPicker.addEventListener('input',function (){
+    let value = this.value
+    let divs = container.getElementsByTagName('div');
+    for(let i = 0; i < divs.length;i++){
+        divs[i].addEventListener('mouseover',function (){this.style.backgroundColor = value});
+    };
 });
 
 

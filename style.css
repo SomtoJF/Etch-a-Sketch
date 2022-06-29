@@ -116,3 +116,8 @@ body{
         background-color: #FF0000;
     }
 }
+.tools #colorpicker{
+    border-radius: 50%;
+    height: 80%;
+    width: 15%;
+}
