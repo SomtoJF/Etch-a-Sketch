@@ -17,6 +17,8 @@ This button changes the background color of any div you hover over to white. [Se
 This button changes the background color of any div you hover over to black. [See lines 48-53](main.js)
 * Slider:
 Every time you move the slider, all the divs in the container are deleted and a new grid is created with the updated value of the slider(This made me really marvel at the speed of computers. When you slide it all the way up the computer actually creates 64*64 divs). [see lines 14-21](main.js)
+* Color Picker:
+The value of the color picker is a string value representing a color. I stored this value in variable and added an event listener which assigns this value to any div I hover (over).
 ## Definitions/words you might not know
 * Grid: A grid (in this case) is a perfect square made up of perfect squares.
 ### [View Live](https://www.somtojf.github.io/Etch-a-Sketch)
